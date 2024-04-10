@@ -1,0 +1,39 @@
+extends: ["spectral:oas"]
+"overrides": [
+  {
+    "files": ["openapi.yaml"],
+    "rules": {
+      "operation-description": "off"
+    }
+  }
+]
+rules:
+  x-domainInfo:
+    description: Info object must have "x-domainInfo"
+    given: $.info
+    severity: error
+    then:
+      - field: x-domainInfo
+        function: truthy
+  x-domainInfo-fields:
+    description: Custom domain properties object must have "domainName" and "subdomainName" fields
+    given: $.info.x-domainInfo
+    severity: error
+    then:
+      - field: domainName
+        function: truthy
+      - field: subdomainName
+        function: truthy
+  valid-domainName:
+    description: Property "domainName"should have a valid value
+    given: $.info.x-domainInfo
+    severity: error
+    then:
+      - field: domainName
+        function: enumeration
+        functionOptions:
+          values:
+            - customer-services-management
+            - staff-and-personnel-management
+            - airflight-management
+            - supporting-services-management
