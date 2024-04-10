@@ -177,7 +177,8 @@ pip install cookiecutter
 ## Paso 17 - Crear el archivo cookiecutter.json con el siguiente contenido
 ```
 {
-    "data_product_name": "api-name",
+    "api_name": "api-name",
+    "api_description": "Breve descripción de la API",
     "domain_name": "customer-services-management"
 }
 ```
