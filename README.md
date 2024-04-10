@@ -187,6 +187,11 @@ pip install cookiecutter
 `mkdir {{cookiecutter.api_name}}`
 
 Mover los archivos .spectral.yaml y openapi.yaml a esta carpeta y copiar el archivo .gitignore
+```
+mv .spectral.yaml \{\{cookiecutter.api_name\}\}
+mv openapi.yaml \{\{cookiecutter.api_name\}\}
+cp .gitignore \{\{cookiecutter.api_name\}\}
+```
 
 ## Paso 19 - Reemplazar Petstore de la linea 6 del opeanpi.yaml
 `  title: Swagger {{cookiecutter.api_name}} - OpenAPI 3.0`
