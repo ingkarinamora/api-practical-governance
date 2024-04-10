@@ -91,7 +91,10 @@ rules:
 ```
 
 ## Paso 10 - Modifiquemos el archivo openapi.yaml con este nuevo campo requerido dentro de Info
-`  x-domainInfo: some value`
+```
+  x-domainInfo:
+    someField: some value
+```
 
 Y una vez mas volvamos a ejecutar el cli
 `spectral lint openapi.yaml`
