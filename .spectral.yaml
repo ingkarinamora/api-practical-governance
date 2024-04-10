@@ -24,3 +24,16 @@ rules:
         function: truthy
       - field: subdomainName
         function: truthy
+  valid-domainName:
+    description: Property "domainName"should have a valid value
+    given: $.info.x-domainInfo
+    severity: error
+    then:
+      - field: domainName
+        function: enumeration
+        functionOptions:
+          values:
+            - customer-services-management
+            - staff-and-personnel-management
+            - airflight-management
+            - supporting-services-management

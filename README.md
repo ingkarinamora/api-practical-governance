@@ -133,7 +133,7 @@ Dentro de rules, debajo de la regla anteriormente creada incluir:
 ```
   valid-domainName:
     description: Property "domainName"should have a valid value
-    given: $.info.domainInfo
+    given: $.info.x-domainInfo
     severity: error
     then:
       - field: domainName
