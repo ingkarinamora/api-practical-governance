@@ -91,7 +91,10 @@ rules:
 ```
 
 ## Paso 10 - Modifiquemos el archivo openapi.yaml con este nuevo campo requerido dentro de Info
-`  x-domainInfo: some value`
+```
+  x-domainInfo:
+    someField: some value
+```
 
 Y una vez mas volvamos a ejecutar el cli
 `spectral lint openapi.yaml`
@@ -130,7 +133,7 @@ Dentro de rules, debajo de la regla anteriormente creada incluir:
 ```
   valid-domainName:
     description: Property "domainName"should have a valid value
-    given: $.info.domainInfo
+    given: $.info.x-domainInfo
     severity: error
     then:
       - field: domainName
@@ -174,7 +177,8 @@ pip install cookiecutter
 ## Paso 17 - Crear el archivo cookiecutter.json con el siguiente contenido
 ```
 {
-    "data_product_name": "api-name",
+    "api_name": "api-name",
+    "api_description": "Breve descripción de la API",
     "domain_name": "customer-services-management"
 }
 ```
@@ -183,6 +187,11 @@ pip install cookiecutter
 `mkdir {{cookiecutter.api_name}}`
 
 Mover los archivos .spectral.yaml y openapi.yaml a esta carpeta y copiar el archivo .gitignore
+```
+mv .spectral.yaml \{\{cookiecutter.api_name\}\}
+mv openapi.yaml \{\{cookiecutter.api_name\}\}
+cp .gitignore \{\{cookiecutter.api_name\}\}
+```
 
 ## Paso 19 - Reemplazar Petstore de la linea 6 del opeanpi.yaml
 `  title: Swagger {{cookiecutter.api_name}} - OpenAPI 3.0`
@@ -191,7 +200,10 @@ Mover los archivos .spectral.yaml y openapi.yaml a esta carpeta y copiar el arch
 `    domainName: {{cookiecutter.domain_name}}`
 
 ## Paso 21 - Crear un README.md en la carpeta {{cookiecutter.api_name}}
-`touch README.md`
+```
+cd \{\{cookiecutter.api_name\}\}
+touch README.md
+```
 
 Y colocar una estructura base de README para una nueva API siguiendo el paradigma API First
 ```
@@ -219,6 +231,13 @@ npm install -g @stoplight/spectral-cli
 `spectral lint openapi.yaml`
 
 ```
+
+## Paso 22 - Generar una nueva API usando el template
+```
+cd ../..
+cookiecutter api-practical-governance/
+
+Revisar el resultado de la carpeta generada en base al template
 
 ## Documentación de las herramientas utilizadas
 
