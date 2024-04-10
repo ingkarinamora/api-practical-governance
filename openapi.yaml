@@ -1,7 +1,7 @@
 openapi: 3.0.3
 info:
   x-domainInfo:
-    domainName: some value
+    domainName: customer-services-management
     subdomainName: some value
   title: Swagger Petstore - OpenAPI 3.0
   description: |-
