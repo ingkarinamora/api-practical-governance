@@ -1,1 +1,9 @@
 extends: ["spectral:oas"]
+"overrides": [
+  {
+    "files": ["openapi.yaml"],
+    "rules": {
+      "operation-description": "off"
+    }
+  }
+]
