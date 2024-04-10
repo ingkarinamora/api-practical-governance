@@ -7,3 +7,11 @@ extends: ["spectral:oas"]
     }
   }
 ]
+rules:
+  x-domainInfo:
+    description: Info object must have "x-domainInfo"
+    given: $.info
+    severity: error
+    then:
+      - field: x-domainInfo
+        function: truthy
