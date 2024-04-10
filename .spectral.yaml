@@ -15,3 +15,12 @@ rules:
     then:
       - field: x-domainInfo
         function: truthy
+  x-domainInfo-fields:
+    description: Custom domain properties object must have "domainName" and "subdomainName" fields
+    given: $.info.x-domainInfo
+    severity: error
+    then:
+      - field: domainName
+        function: truthy
+      - field: subdomainName
+        function: truthy
