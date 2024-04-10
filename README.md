@@ -222,10 +222,9 @@ Otras opciones de instalación las pueden encontrar acá: https://www.freecodeca
 ## Validación de la especificación de la API
 
 ## Instalar spectral-cli
-```
-nvm use --lts
-npm install -g @stoplight/spectral-cli
-```
+`nvm use --lts`
+`npm install -g @stoplight/spectral-cli`
+
 
 ## Ejecutar el cli para analizar openapi.yaml
 `spectral lint openapi.yaml`
@@ -236,6 +235,7 @@ npm install -g @stoplight/spectral-cli
 ```
 cd ../..
 cookiecutter api-practical-governance/
+```
 
 Revisar el resultado de la carpeta generada en base al template
 
