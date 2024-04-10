@@ -1,7 +1,8 @@
 openapi: 3.0.3
 info:
   x-domainInfo:
-    someField: some value
+    domainName: some value
+    subdomainName: some value
   title: Swagger Petstore - OpenAPI 3.0
   description: |-
     This is a sample Pet Store Server based on the OpenAPI 3.0 specification.  You can find out more about
