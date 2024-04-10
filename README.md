@@ -200,7 +200,10 @@ cp .gitignore \{\{cookiecutter.api_name\}\}
 `    domainName: {{cookiecutter.domain_name}}`
 
 ## Paso 21 - Crear un README.md en la carpeta {{cookiecutter.api_name}}
-`touch README.md`
+```
+cd \{\{cookiecutter.api_name\}\}
+touch README.md
+```
 
 Y colocar una estructura base de README para una nueva API siguiendo el paradigma API First
 ```
@@ -228,6 +231,11 @@ npm install -g @stoplight/spectral-cli
 `spectral lint openapi.yaml`
 
 ```
+
+## Paso 22 - Generar una nueva API usando el template
+```
+cd ../..
+cookiecutter api-practical-governance/
 
 ## Documentación de las herramientas utilizadas
 
