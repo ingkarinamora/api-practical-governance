@@ -237,6 +237,8 @@ npm install -g @stoplight/spectral-cli
 cd ../..
 cookiecutter api-practical-governance/
 
+Revisar el resultado de la carpeta generada en base al template
+
 ## Documentación de las herramientas utilizadas
 
 https://github.com/swagger-api/swagger-editor
